@@ -58,11 +58,11 @@ This function adds a user to the htpasswd file. It is not intended to update
 user accounts. Attempting to update an account with this function will result in
 an error via `Promise.reject`.
 
-`username` - `String` - The username of the user to be added.
-`password` - `String` - The password of the user to be added.
-`options`  - `Object` - An object specifying the specific functionality.
-    `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
-    `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
+* `username` - `String` - The username of the user to be added.
+* `password` - `String` - The password of the user to be added.
+* `options`  - `Object` - An object specifying the specific functionality.
+    * `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
+    * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
     
 Returns: `Promise`
 
@@ -74,11 +74,11 @@ This function updates a user to the htpasswd file. It is not intended to add
 user accounts. Attempting to add an account with this function will result in an
 error via `Promise.reject`.
 
-`username` - `String` - The username of the user to be updated.
-`password` - `String` - The password of the user to be updated.
-`options`  - `Object` - An object specifying the specific functionality.
-    `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
-    `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
+* `username` - `String` - The username of the user to be updated.
+* `password` - `String` - The password of the user to be updated.
+* `options`  - `Object` - An object specifying the specific functionality.
+	* `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
+    * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
 
 Returns: `Promise`
 
@@ -88,9 +88,9 @@ Returns: `Promise`
 
 This function removes a user from the htpasswd file.
 
-`username` - `String` - The username of the user to be updated.
-`options`  - `Object` - An object specifying the specific functionality.
-    `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
+* `username` - `String` - The username of the user to be updated.
+* `options`  - `Object` - An object specifying the specific functionality.
+    * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
     
 Returns: `Promise`
 
