@@ -62,7 +62,7 @@ an error via `Promise.reject`.
 `password` - `String` - The password of the user to be added.
 `options`  - `Object` - An object specifying the specific functionality.
     `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
-    `options.export`    - `Boolean` - Default: `true`
+    `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
     
 Returns: `Promise`
 
@@ -78,7 +78,7 @@ error via `Promise.reject`.
 `password` - `String` - The password of the user to be updated.
 `options`  - `Object` - An object specifying the specific functionality.
     `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
-    `options.export`    - `Boolean` - Default: `true`
+    `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
 
 Returns: `Promise`
 
@@ -90,7 +90,7 @@ This function removes a user from the htpasswd file.
 
 `username` - `String` - The username of the user to be updated.
 `options`  - `Object` - An object specifying the specific functionality.
-    `options.export`    - `Boolean` - Default: `true`
+    `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
     
 Returns: `Promise`
 
