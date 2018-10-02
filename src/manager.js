@@ -13,8 +13,9 @@ function initialize(path) {
     const exports = {
         updateState: readFile,
         updateFile: exportToFile,
-        addUser: addUser,
-        updateUser: updateUser,
+        addUser: addOrUpdateUser,
+        updateUser: addOrUpdateUser,
+        upsertUser: addOrUpdateUser,
         removeUser: removeUser,
         listUsers: listUsers
     };
@@ -24,6 +25,7 @@ function initialize(path) {
             let htpasswdContents = fs.readFileSync(path, {encoding: 'utf8'});
             parseFile(htpasswdContents);
         }
+        console.log(htpasswd);
         return Promise.resolve();
     }
     
@@ -83,9 +85,7 @@ function initialize(path) {
      * @param options {Object} object with options - example { algorithm: 'crypt', export: false }
      */
     function addUser(username, password, options) {
-        if (htpasswd[username]) {
-            return Promise.reject(new Error('A user with that username already exists.'));
-        }
+        
         return addOrUpdateUser(username, password, options);
     }
     
