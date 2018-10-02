@@ -82,6 +82,18 @@ error via `Promise.reject`.
 
 Returns: `Promise`
 
+## upsertUser
+
+`htpasswdManager.upsertUser(username, password, options)`
+
+This function allows for an account with the provided username to be added or 
+updated without worrying about a rejected Promise if the user account already
+exists (in the case of adding a new user), or if the account does not exist (in
+the case of updating a user).  This provides a means of overriding any existing
+account and updating it with the provided values.
+
+Returns: `Promise`
+
 ## removeUser
 
 `htpasswdManager.removeUser(username, options)`
