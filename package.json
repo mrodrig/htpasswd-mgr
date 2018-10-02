@@ -2,7 +2,7 @@
     "author": "mrodrig",
     "name": "htpasswd-mgr",
     "description": "HTPasswd Manager for Node.js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "repository": {
         "type": "git",
         "url": "http://github.com/mrodrig/htpasswd-mgr.git"
@@ -18,8 +18,7 @@
     ],
     "dependencies": {
         "apache-crypt": "1.2.1",
-        "apache-md5": "1.1.2",
-        "underscore": "1.9.1"
+        "apache-md5": "1.1.2"
     },
     "engines": {
         "node": ">= 8"
