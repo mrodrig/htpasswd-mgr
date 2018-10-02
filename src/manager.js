@@ -20,8 +20,10 @@ function initialize(path) {
     };
     
     function readFile() {
-        let htpasswdContents = fs.readFileSync(path, {encoding: 'utf8'});
-        parseFile(htpasswdContents);
+        if (fs.existsSync(path)) {
+            let htpasswdContents = fs.readFileSync(path, {encoding: 'utf8'});
+            parseFile(htpasswdContents);
+        }
         return Promise.resolve();
     }
     
