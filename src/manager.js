@@ -25,7 +25,6 @@ function initialize(path) {
             let htpasswdContents = fs.readFileSync(path, {encoding: 'utf8'});
             parseFile(htpasswdContents);
         }
-        console.log(htpasswd);
         return Promise.resolve();
     }
     
