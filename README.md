@@ -61,7 +61,7 @@ an error via `Promise.reject`.
 * `username` - `String` - The username of the user to be added.
 * `password` - `String` - The password of the user to be added.
 * `options`  - `Object` - An object specifying the specific functionality.
-    * `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
+    * `options.algorithm` - `String` - `'crypt'`, `'bcrypt'`, `'sha'`, or `'md5'`. Default: `'md5'`
     * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
     
 Returns: `Promise`
@@ -77,7 +77,7 @@ error via `Promise.reject`.
 * `username` - `String` - The username of the user to be updated.
 * `password` - `String` - The password of the user to be updated.
 * `options`  - `Object` - An object specifying the specific functionality.
-	* `options.algorithm` - `String` - `'crypt'` or `'md5'`. Default: `'md5'`
+	* `options.algorithm` - `String` - `'crypt'`, `'bcrypt'`, `'sha'`, or `'md5'`. Default: `'md5'`
     * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
 
 Returns: `Promise`
@@ -91,6 +91,12 @@ updated without worrying about a rejected Promise if the user account already
 exists (in the case of adding a new user), or if the account does not exist (in
 the case of updating a user).  This provides a means of overriding any existing
 account and updating it with the provided values.
+
+* `username` - `String` - The username of the user to be upserted.
+* `password` - `String` - The password of the user to be upserted.
+* `options`  - `Object` - An object specifying the specific functionality.
+	* `options.algorithm` - `String` - `'crypt'`, `'bcrypt'`, `'sha'`, or `'md5'`. Default: `'md5'`
+    * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
 
 Returns: `Promise`
 
