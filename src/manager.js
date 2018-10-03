@@ -4,7 +4,11 @@ const {promisify} = require('util'),
     fs = require('fs'),
     md5 = require('apache-md5'),
     crypt = require('apache-crypt'),
-    writeFileAsync = promisify(fs.writeFile);
+    writeFileAsync = promisify(fs.writeFile),
+    
+    utilities = require('./utilities'),
+    
+    DEFAULT_ALGORITHM = 'md5';
 
 
 function initialize(path) {
@@ -13,8 +17,8 @@ function initialize(path) {
     const exports = {
         updateState: readFile,
         updateFile: exportToFile,
-        addUser: addOrUpdateUser,
-        updateUser: addOrUpdateUser,
+        addUser: addUser,
+        updateUser: updateUser,
         upsertUser: addOrUpdateUser,
         removeUser: removeUser,
         listUsers: listUsers
@@ -61,8 +65,11 @@ function initialize(path) {
         switch(algorithm) {
             case 'crypt':
                 return crypt(password);
-            // TODO: Add additional algorithms
-            //   Reference: https://github.com/http-auth/htpasswd/blob/master/src/utils.js
+            case 'sha':
+                return utilities.sha1(password);
+            case 'bcrypt':
+                return utilities.bcrypt(password);
+            case 'md5':
             default:
                 return md5(password);
         }
@@ -84,6 +91,9 @@ function initialize(path) {
      * @param options {Object} object with options - example { algorithm: 'crypt', export: false }
      */
     function addUser(username, password, options) {
+        if (htpasswd[username]) {
+            return Promise.reject(new Error('A user with that username already exists.'));
+        }
         
         return addOrUpdateUser(username, password, options);
     }
