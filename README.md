@@ -1,5 +1,9 @@
 # htpasswd-mgr - The HTPasswd Manager for Node
 
+[![Dependencies](https://img.shields.io/david/mrodrig/htpasswd-mgr.svg?style=flat-square)](https://www.npmjs.org/package/htpasswd-mgr)
+[![Downloads](http://img.shields.io/npm/dm/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
+[![NPM version](https://img.shields.io/npm/v/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
+
 This module was developed to simplify the management of .htpasswd files from
 a Node.js application. Specifically, it's intended to allow for the addition,
 modification, and deletion of users programmatically from inside a Node 
