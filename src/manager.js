@@ -1,6 +1,6 @@
 'use strict';
 
-const {promisify} = require('util'),
+const {promisify} = require('bluebird'),
     fs = require('fs'),
     md5 = require('apache-md5'),
     crypt = require('apache-crypt'),
