@@ -3,7 +3,7 @@ const crypto = require('crypto'),
     
     SALT_ROUNDS = 5;
 
-exports = {
+module.exports = {
     sha1: sha1,
     bcrypt: bcrypt
 };
@@ -21,5 +21,3 @@ function bcrypt(value) {
     
     return bcryptLib.hashSync(value, salt);
 }
-
-module.exports = exports;
