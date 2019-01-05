@@ -176,4 +176,19 @@ htpasswdManager.listUsers()
 
 # Tests
 
-Coming soon!
+```bash
+$ npm test
+```
+
+To see test coverage, please run:
+```bash
+$ npm run coverage
+```
+
+Current Coverage is:
+```
+Statements   : 100% ( 64/64 )
+Branches     : 100% ( 20/20 )
+Functions    : 100% ( 15/15 )
+Lines        : 100% ( 64/64 )
+```
