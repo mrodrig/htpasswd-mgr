@@ -1,6 +1,6 @@
 const crypto = require('crypto'),
     bcryptLib = require('bcrypt'),
-    
+
     SALT_ROUNDS = 5;
 
 module.exports = {
@@ -12,12 +12,12 @@ module.exports = {
 function sha1(value) {
     let hash = crypto.createHash('sha1');
     hash.update(value);
-    
+
     return hash.digest('base64');
 }
 
 function bcrypt(value) {
     let salt = bcryptLib.genSaltSync(SALT_ROUNDS);
-    
+
     return bcryptLib.hashSync(value, salt);
 }

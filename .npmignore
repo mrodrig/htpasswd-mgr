@@ -1,5 +1,8 @@
+test/
+.git*
+npm-debug.log
+.travis.yml
+.eslintrc
 node_modules
-.gitignore
-package-lock.json
-test/manual
-test/manual/*
+coverage
+upgrade_guides

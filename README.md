@@ -3,6 +3,13 @@
 [![Dependencies](https://img.shields.io/david/mrodrig/htpasswd-mgr.svg?style=flat-square)](https://www.npmjs.org/package/htpasswd-mgr)
 [![Downloads](http://img.shields.io/npm/dm/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
 [![NPM version](https://img.shields.io/npm/v/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
+[![Package Size](https://img.shields.io/bundlephobia/min/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
+<!--[![Known Vulnerabilities](https://snyk.io/test/npm/htpasswd-mgr/badge.svg)](https://snyk.io/test/npm/htpasswd-mgr)-->
+
+[![Build Status](https://travis-ci.org/mrodrig/htpasswd-mgr.svg?branch=master)](https://travis-ci.org/mrodrig/htpasswd-mgr)
+[![Maintainability](https://api.codeclimate.com/v1/badges/41cf01fb45ce64976122/maintainability)](https://codeclimate.com/github/mrodrig/htpasswd-mgr/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/41cf01fb45ce64976122/test_coverage)](https://codeclimate.com/github/mrodrig/htpasswd-mgr/test_coverage)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=rodrigues.mi%40husky.neu.edu&item_name=Open+Source+Software+Development+-+Node+Modules&currency_code=USD&source=url)
 
 This module was developed to simplify the management of .htpasswd files from
 a Node.js application. Specifically, it's intended to allow for the addition,
@@ -41,6 +48,12 @@ to be called.
 
 Returns: `Promise`
 
+```javascript
+htpasswdManager.updateState()
+    .then(() => { ... })
+    .catch((err) => { ... });
+```
+
 ## updateFile
 
 `htpasswdManager.updateFile()`
@@ -53,6 +66,12 @@ users to the htpasswd file and then manually call this function to write the
 file out to disk.
 
 Returns: `Promise`
+
+```javascript
+htpasswdManager.updateFile()
+    .then(() => { ... })
+    .catch((err) => { ... });
+```
 
 ## addUser
 
@@ -70,6 +89,12 @@ an error via `Promise.reject`.
     
 Returns: `Promise`
 
+```javascript
+htpasswdManager.addUser(username, password, options)
+    .then(() => { ... })
+    .catch((err) => { ... });
+```
+
 ## updateUser
 
 `htpasswdManager.updateUser(username, password, options)`
@@ -85,6 +110,13 @@ error via `Promise.reject`.
     * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
 
 Returns: `Promise`
+
+
+```javascript
+htpasswdManager.updateUser(username, password, options)
+    .then(() => { ... })
+    .catch((err) => { ... });
+```
 
 ## upsertUser
 
@@ -104,6 +136,12 @@ account and updating it with the provided values.
 
 Returns: `Promise`
 
+```javascript
+htpasswdManager.upsertUser(username, password, options)
+    .then(() => { ... })
+    .catch((err) => { ... });
+```
+
 ## removeUser
 
 `htpasswdManager.removeUser(username, options)`
@@ -116,13 +154,25 @@ This function removes a user from the htpasswd file.
     
 Returns: `Promise`
 
+```javascript
+htpasswdManager.addUser(username, options)
+    .then(() => { ... })
+    .catch((err) => { ... });
+```
+
 ## listUsers
 
 `htpasswdManager.listUsers()`
 
 This function will return an array of the users currently in the htpasswd file.
 
-Returns: `Array[String]`
+Returns: `Promise<Array[String]>`
+
+```javascript
+htpasswdManager.listUsers()
+    .then((users) => { ... })
+    .catch((err) => { ... });
+```
 
 # Tests
 
