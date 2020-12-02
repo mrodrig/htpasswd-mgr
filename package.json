@@ -8,12 +8,12 @@
         "type": "git",
         "url": "http://github.com/mrodrig/htpasswd-mgr.git"
     },
-    "main": "./src/manager.js",
+    "main": "lib/manager.js",
     "scripts": {
         "test": "./node_modules/.bin/mocha test/tests.js",
         "coverage": "nyc --reporter=lcov --reporter=text-summary --reporter=text _mocha",
         "coveralls": "nyc report --reporter=text-lcov | coveralls",
-        "lint": "./node_modules/.bin/eslint src test"
+        "lint": "./node_modules/.bin/eslint lib test"
     },
     "keywords": [
         "htpasswd",

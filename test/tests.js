@@ -4,8 +4,8 @@
 let should = require('should'),
     fs = require('fs'),
     path = require('path'),
-    manager = require('../src/manager'),
-    constants = require('../src/constants');
+    manager = require('../lib/manager'),
+    constants = require('../lib/constants');
 
 const CLEAN_TEST_FILE_PATH = path.join(__dirname, './data/htpasswd'),
     WORKING_TEST_FILE_PATH = path.join(__dirname, './htpasswd'),
