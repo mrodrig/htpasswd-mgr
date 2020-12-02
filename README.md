@@ -3,13 +3,11 @@
 [![Dependencies](https://img.shields.io/david/mrodrig/htpasswd-mgr.svg?style=flat-square)](https://www.npmjs.org/package/htpasswd-mgr)
 [![Downloads](http://img.shields.io/npm/dm/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
 [![NPM version](https://img.shields.io/npm/v/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
-[![Package Size](https://img.shields.io/bundlephobia/min/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
-<!--[![Known Vulnerabilities](https://snyk.io/test/npm/htpasswd-mgr/badge.svg)](https://snyk.io/test/npm/htpasswd-mgr)-->
+[![Minzipped Size](https://flat.badgen.net/bundlephobia/minzip/htpasswd-mgr)](https://bundlephobia.com/result?p=htpasswd-mgr)
 
 [![Build Status](https://travis-ci.org/mrodrig/htpasswd-mgr.svg?branch=master)](https://travis-ci.org/mrodrig/htpasswd-mgr)
+[![Coverage Status](https://coveralls.io/repos/github/mrodrig/htpasswd-mgr/badge.svg?branch=stable)](https://coveralls.io/github/mrodrig/htpasswd-mgr?branch=stable)
 [![Maintainability](https://api.codeclimate.com/v1/badges/41cf01fb45ce64976122/maintainability)](https://codeclimate.com/github/mrodrig/htpasswd-mgr/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/41cf01fb45ce64976122/test_coverage)](https://codeclimate.com/github/mrodrig/htpasswd-mgr/test_coverage)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=rodrigues.mi%40husky.neu.edu&item_name=Open+Source+Software+Development+-+Node+Modules&currency_code=USD&source=url)
 
 This module was developed to simplify the management of .htpasswd files from
 a Node.js application. Specifically, it's intended to allow for the addition,

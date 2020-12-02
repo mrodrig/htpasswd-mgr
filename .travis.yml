@@ -3,6 +3,7 @@ env:
     - CC_TEST_REPORTER_ID=6901f64ef53effa16b51755b09c5a82cd063a88786f2bc365e74524b2e95d21b
 language: node_js
 node_js:
+  - "15"
   - "14"
   - "12"
   - "10"
@@ -14,5 +15,6 @@ before_script:
 script:
   - npm run lint
   - npm run coverage
-after_script:
+after_success:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - npm run coveralls
