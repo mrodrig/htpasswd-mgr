@@ -7,3 +7,5 @@ node_modules
 coverage
 upgrade_guides
 _config.yml
+.coveralls.yml
+.nyc_output
