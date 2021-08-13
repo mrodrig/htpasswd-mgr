@@ -25,7 +25,7 @@
     "dependencies": {
         "apache-crypt": "1.2.1",
         "apache-md5": "1.1.2",
-        "bcrypt": "5.0.0",
+        "bcrypt": "5.0.1",
         "bluebird": "3.5.3"
     },
     "devDependencies": {
