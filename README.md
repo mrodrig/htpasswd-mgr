@@ -1,13 +1,13 @@
 # htpasswd-mgr - The HTPasswd Manager for Node
 
-[![Dependencies](https://img.shields.io/david/mrodrig/htpasswd-mgr.svg?style=flat-square)](https://www.npmjs.org/package/htpasswd-mgr)
-[![Downloads](http://img.shields.io/npm/dm/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
 [![NPM version](https://img.shields.io/npm/v/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
-[![Minzipped Size](https://flat.badgen.net/bundlephobia/minzip/htpasswd-mgr)](https://bundlephobia.com/result?p=htpasswd-mgr)
+[![Typings](https://img.shields.io/npm/types/htpasswd-mgr)](https://www.npmjs.org/package/htpasswd-mgr)
+[![Downloads](https://img.shields.io/npm/dm/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
+[![Minzipped Size](https://img.shields.io/bundlephobia/minzip/htpasswd-mgr)](https://bundlephobia.com/result?p=htpasswd-mgr)
 
-[![Build Status](https://travis-ci.org/mrodrig/htpasswd-mgr.svg?branch=master)](https://travis-ci.org/mrodrig/htpasswd-mgr)
-[![Coverage Status](https://coveralls.io/repos/github/mrodrig/htpasswd-mgr/badge.svg?branch=stable)](https://coveralls.io/github/mrodrig/htpasswd-mgr?branch=stable)
-[![Maintainability](https://api.codeclimate.com/v1/badges/41cf01fb45ce64976122/maintainability)](https://codeclimate.com/github/mrodrig/htpasswd-mgr/maintainability)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mrodrig/htpasswd-mgr/automated-tests-workflow.yml)](https://github.com/mrodrig/htpasswd-mgr/actions/workflows/automated-tests-workflow.yml)
+[![Coverage Status](https://coveralls.io/repos/github/mrodrig/htpasswd-mgr/badge.svg?branch=stable)](https://coveralls.io/github/mrodrig/htpasswd-mgr?branch=main)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8c0cc3699d054fb77abe/maintainability)](https://codeclimate.com/github/mrodrig/htpasswd-mgr/maintainability)
 
 This module was developed to simplify the management of .htpasswd files from
 a Node.js application. Specifically, it's intended to allow for the addition,
