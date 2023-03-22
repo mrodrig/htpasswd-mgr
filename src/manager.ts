@@ -46,9 +46,9 @@ function initialize(path: string) {
         }
     }
 
-    function exportToFile() {
-        return convertHTPasswdToString()
-            .then(writeToFile);
+    async function exportToFile() {
+        const fileData = await convertHTPasswdToString();
+        await writeToFile(fileData);
     }
 
     function writeToFile(data: string) {
