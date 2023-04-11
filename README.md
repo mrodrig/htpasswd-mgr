@@ -1,13 +1,11 @@
 # htpasswd-mgr - The HTPasswd Manager for Node
 
-[![Dependencies](https://img.shields.io/david/mrodrig/htpasswd-mgr.svg?style=flat-square)](https://www.npmjs.org/package/htpasswd-mgr)
-[![Downloads](http://img.shields.io/npm/dm/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
 [![NPM version](https://img.shields.io/npm/v/htpasswd-mgr.svg)](https://www.npmjs.org/package/htpasswd-mgr)
-[![Minzipped Size](https://flat.badgen.net/bundlephobia/minzip/htpasswd-mgr)](https://bundlephobia.com/result?p=htpasswd-mgr)
-
-[![Build Status](https://travis-ci.org/mrodrig/htpasswd-mgr.svg?branch=master)](https://travis-ci.org/mrodrig/htpasswd-mgr)
-[![Coverage Status](https://coveralls.io/repos/github/mrodrig/htpasswd-mgr/badge.svg?branch=stable)](https://coveralls.io/github/mrodrig/htpasswd-mgr?branch=stable)
-[![Maintainability](https://api.codeclimate.com/v1/badges/41cf01fb45ce64976122/maintainability)](https://codeclimate.com/github/mrodrig/htpasswd-mgr/maintainability)
+[![Downloads](https://img.shields.io/npm/dm/htpasswd-mgr)](https://www.npmjs.org/package/htpasswd-mgr)
+[![Minzipped Size](https://img.shields.io/bundlephobia/minzip/htpasswd-mgr)](https://bundlephobia.com/result?p=htpasswd-mgr)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mrodrig/htpasswd-mgr/automated-tests-workflow.yml)](https://github.com/mrodrig/htpasswd-mgr/actions/workflows/automated-tests-workflow.yml)
+[![Coverage Status](https://coveralls.io/repos/github/mrodrig/htpasswd-mgr/badge.svg?branch=main)](https://coveralls.io/github/mrodrig/htpasswd-mgr?branch=main)
+[![Typings](https://img.shields.io/npm/types/htpasswd-mgr)](https://www.npmjs.org/package/htpasswd-mgr)
 
 This module was developed to simplify the management of .htpasswd files from
 a Node.js application. Specifically, it's intended to allow for the addition,
@@ -44,7 +42,7 @@ programmatically allowing the module to remain up-to-date if changes are made
 directly to the underlying htpasswd file. Ideally, this function should not need
 to be called.
 
-Returns: `Promise`
+Returns: `Promise<void>`
 
 ```javascript
 htpasswdManager.updateState()
@@ -63,7 +61,7 @@ write the file to the disk. Instead, with this function, one could add several
 users to the htpasswd file and then manually call this function to write the
 file out to disk.
 
-Returns: `Promise`
+Returns: `Promise<void>`
 
 ```javascript
 htpasswdManager.updateFile()
@@ -77,7 +75,7 @@ htpasswdManager.updateFile()
 
 This function adds a user to the htpasswd file. It is not intended to update
 user accounts. Attempting to update an account with this function will result in
-an error via `Promise.reject`.
+a rejected Promise.
 
 * `username` - `String` - The username of the user to be added.
 * `password` - `String` - The password of the user to be added.
@@ -85,7 +83,7 @@ an error via `Promise.reject`.
     * `options.algorithm` - `String` - `'crypt'`, `'bcrypt'`, `'sha'`, or `'md5'`. Default: `'md5'`
     * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
     
-Returns: `Promise`
+Returns: `Promise<void>`
 
 ```javascript
 htpasswdManager.addUser(username, password, options)
@@ -98,8 +96,7 @@ htpasswdManager.addUser(username, password, options)
 `htpasswdManager.updateUser(username, password, options)`
 
 This function updates a user to the htpasswd file. It is not intended to add
-user accounts. Attempting to add an account with this function will result in an
-error via `Promise.reject`.
+user accounts. Attempting to add an account with this function will result in a rejected Promise.
 
 * `username` - `String` - The username of the user to be updated.
 * `password` - `String` - The password of the user to be updated.
@@ -107,7 +104,7 @@ error via `Promise.reject`.
 	* `options.algorithm` - `String` - `'crypt'`, `'bcrypt'`, `'sha'`, or `'md5'`. Default: `'md5'`
     * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
 
-Returns: `Promise`
+Returns: `Promise<void>`
 
 
 ```javascript
@@ -132,7 +129,7 @@ account and updating it with the provided values.
 	* `options.algorithm` - `String` - `'crypt'`, `'bcrypt'`, `'sha'`, or `'md5'`. Default: `'md5'`
     * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
 
-Returns: `Promise`
+Returns: `Promise<void>`
 
 ```javascript
 htpasswdManager.upsertUser(username, password, options)
@@ -150,7 +147,7 @@ This function removes a user from the htpasswd file.
 * `options`  - `Object` - An object specifying the specific functionality.
     * `options.export`    - `Boolean` - Should the module state be exported to the htpasswd file? Default: `true`
     
-Returns: `Promise`
+Returns: `Promise<void>`
 
 ```javascript
 htpasswdManager.addUser(username, options)
@@ -164,12 +161,11 @@ htpasswdManager.addUser(username, options)
 
 This function will return an array of the users currently in the htpasswd file.
 
-Returns: `Promise<Array[String]>`
+Returns: `Promise<string[]>`
 
 ```javascript
 htpasswdManager.listUsers()
-    .then((users) => { ... })
-    .catch((err) => { ... });
+    .then((users) => { console.log('Users', users); });
 ```
 
 # Tests
@@ -181,12 +177,4 @@ $ npm test
 To see test coverage, please run:
 ```bash
 $ npm run coverage
-```
-
-Current Coverage is:
-```
-Statements   : 100% ( 64/64 )
-Branches     : 100% ( 20/20 )
-Functions    : 100% ( 15/15 )
-Lines        : 100% ( 64/64 )
 ```
