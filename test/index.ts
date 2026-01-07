@@ -8,13 +8,15 @@ import { errors } from '../src/constants';
 
 const CLEAN_TEST_FILE_PATH = path.join(__dirname, './data/htpasswd'),
     WORKING_TEST_FILE_PATH = path.join(__dirname, './htpasswd'),
-    NEW_TEST_FILE_PATH = path.join(__dirname, './newfile');
+    NEW_TEST_FILE_PATH = path.join(__dirname, './newfile'),
+    EMPTY_TEST_FILE_PATH = path.join(__dirname, './emptyfile');
 
 function reset() {
     if (!fs.existsSync(CLEAN_TEST_FILE_PATH)) {
         throw new Error('Clean test file does not exist!');
     }
     copyFile(CLEAN_TEST_FILE_PATH, WORKING_TEST_FILE_PATH);
+    fs.writeFileSync(EMPTY_TEST_FILE_PATH, '');
 }
 
 function copyFile(srcPath: string, destPath: string) {
@@ -35,6 +37,7 @@ function removeFile(filePath: string) {
 function cleanup() {
     removeFile(WORKING_TEST_FILE_PATH);
     removeFile(NEW_TEST_FILE_PATH);
+    removeFile(EMPTY_TEST_FILE_PATH);
 }
 
 function runTests() {
@@ -213,6 +216,14 @@ function runTests() {
 
         it('htpasswdManager(new file path)', async () => {
             htpasswdManager = manager(NEW_TEST_FILE_PATH);
+        });
+
+        it('htpasswdManager(empty file)', async () => {
+            htpasswdManager = manager(EMPTY_TEST_FILE_PATH);
+            const users = await htpasswdManager.listUsers();
+
+            assert(users instanceof Array);
+            assert.equal(users.length, 0);
         });
 
         after(cleanup);

@@ -40,6 +40,9 @@ function initialize(path: string) {
     function parseFile(fileContents: string) {
         const lines = fileContents.trim().split('\n');
         for (const line of lines) {
+            if (!line) {
+                continue;
+            }
             const splitLine = line.split(':');
             const [username, password] = splitLine;
             htpasswd[username] = password;
